@@ -17,10 +17,18 @@ vagrant init eficode/docker-course --box-version 2.0.1
 Based on Ubuntu 18.04 Bionic server with docker-ce, docker-compose and minikube preinstalled
 
 Starting environment:
-- vagrant up
+
+    vagrant up
+
 Stopping environment:
-- vagrant halt
+
+    vagrant halt
+
 Destroying environment:
-- vagrant destroy -f
+
+    vagrant destroy -f
+
 Destroying and rebuilding environment:
-- vagrant destroy -f && vagrant up
+
+    vagrant destroy -f && vagrant up
+
