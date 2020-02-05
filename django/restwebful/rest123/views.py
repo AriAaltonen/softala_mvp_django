@@ -1,6 +1,8 @@
 from .models import Drink
 from rest_framework import viewsets
 from .serilalizer import DrinkSerializer
+
+
 # Create your views here.
 
 class DrinkViewSet(viewsets.ModelViewSet):
