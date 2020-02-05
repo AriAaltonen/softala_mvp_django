@@ -1,4 +1,4 @@
-# Dockerfile for node backend
+# Dockerfile for slackbot
 
 # Add a base image to build this image off of
 FROM ubuntu:18.04
