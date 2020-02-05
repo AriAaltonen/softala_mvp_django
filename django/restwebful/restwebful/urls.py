@@ -24,6 +24,7 @@ router.register(r'drink', views.DrinkViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('index/', views.home, name='rest-index'),
     path('', include(router.urls)),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
