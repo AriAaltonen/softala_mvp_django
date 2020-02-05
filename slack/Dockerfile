@@ -6,20 +6,21 @@ FROM ubuntu:18.04
 # define workdir
 WORKDIR /slack
 
-# add `/backend/node_modules/.bin` to $PATH
-#ENV PATH /backend/node_modules/.bin:$PATH
+# update
+RUN apt-get update -y
 
-# copy files
-COPY package.json /slack
+# modules
+RUN apt-get install -y python-pip3
 
-# install npm modules
-RUN npm install
+#Copy file and install modules
+COPY requirements.txt /slack
+RUN pip3 install --no-cache-dir -r /slack/requirements.txt
 
 # copy folder & files
 COPY . /slack
 
 # Add a default port containers from this image should expose
-EXPOSE 9001
+EXPOSE 5000
 
 # Add a default command for this image
-CMD ["npm", "run", "dev"]
+CMD [ "python", "./slack/slackbot.py" ]
