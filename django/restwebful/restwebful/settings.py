@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from restwebful import hidden
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '084iv6+k96ibtv^67nue0g5ta%9@+u_i1$oee8lgk=hjgo0_bw'
+SECRET_KEY = hidden.Django_token
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
