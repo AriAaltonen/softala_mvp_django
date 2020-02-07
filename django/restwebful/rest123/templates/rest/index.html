@@ -15,12 +15,25 @@
     <div class='container'>
       <div class='row'>
         <div class='col'>
-          <h1>HELLO WORLD!</h1>
+          <h1>Kaljat Loppu?</h1>
+          <div>
+            <img src="https://i.ytimg.com/vi/c5znpOYmO8Y/maxresdefault.jpg" alt="oispakaljaa" width="600" height="400">
+          </div>
           
         </div>
         <div class='col'></div>
-        <a class="btn btn-primary">POST</a>
-        </div>
+        <form method="POST" action="/api/beer/">
+           {% csrf_token %}
+        <button type="submit" class="btn btn-primary">LÄHETÄ VIESTI</button>
+      </form>
+      </div>
+      </div>
+      <div>
+      {% if messages %}
+      {% for message in messages %}
+       {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+      {% endfor %}
+      {% endif %}
       </div>
     </div>
   </body>
