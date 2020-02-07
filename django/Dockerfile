@@ -10,7 +10,7 @@ WORKDIR /django
 RUN apt-get update -y
 
 # modules
-RUN apt-get install -y python-pip3
+RUN apt-get install -y python3-pip python-dev build-essential
 
 #Copy file and install modules
 COPY requirements.txt /django
@@ -23,4 +23,4 @@ COPY . /django
 EXPOSE 8000
 
 # Add a default command for this image
-CMD [ "python", " ./restwebful/manage.py runserver 0.0.0.0:8000" ]
+CMD [ "python3", " ./restwebful/manage.py runserver 0.0.0.0:8000" ]
