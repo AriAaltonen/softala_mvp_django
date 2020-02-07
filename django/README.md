@@ -1,4 +1,3 @@
-this for django
 Vagrant is automaticly installing python-pip and all python modules according to requirements.txt.
 
 When development enviroment is up;

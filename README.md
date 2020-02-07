@@ -9,7 +9,8 @@ Todo:
 - Install first Virtualbox 6.0.x
 - Install vagrant after Virtualbox
 - And then run this command:
-- vagrant up
+
+	    vagrant up
 
 Based on Ubuntu 18.04 Bionic server with docker-ce, docker-compose and minikube preinstalled
 
