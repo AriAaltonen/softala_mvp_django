@@ -19,7 +19,7 @@ venv.bak/
 
 # Vagrant
 .vagrant/
-
+Vagrantfile
 ### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
