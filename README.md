@@ -8,9 +8,6 @@ Todo:
 
 - Install first Virtualbox 6.0.x
 - Install vagrant after Virtualbox
-- Open terminal/command prompt (in Windows, open start menu and write cmd and open it)
-- Run the following command in terminal:
-vagrant init eficode/docker-course --box-version 2.0.1
 - And then run this command:
 - vagrant up
 
