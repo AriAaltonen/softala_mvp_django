@@ -27,7 +27,8 @@ Vagrant.configure("2") do |config|
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.network "forwarded_port", guest: 9000, host: 9000
   config.vm.network "forwarded_port", guest: 9001, host: 9001
-
+  config.vm.network "forwarded_port", guest: 8000, host: 8000
+  config.vm.network "forwarded_port", guest: 8001, host: 8001
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine and only allow access
   # via 127.0.0.1 to disable public access
@@ -40,8 +41,8 @@ Vagrant.configure("2") do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-#config.vm.network "public_network"
-config.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
+config.vm.network "public_network"
+#config.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -61,8 +62,8 @@ config.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
- # vb.memory = "2048"
-  vb.memory = "3072"
+  vb.memory = "2048"
+  #vb.memory = "3072"
   end
   #
   # View the documentation for the provider you are using for more
@@ -71,8 +72,12 @@ config.vm.network "public_network", bridge: "en0: Wi-Fi (AirPort)"
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  # config.vm.provision "shell", inline: <<-SHELL
-  #   apt-get update
-  #   apt-get install -y apache2
-  # SHELL
+   config.vm.provision "shell", inline: <<-SHELL
+     apt-get update
+
+     apt-get install -y python3-pip
+     cd softala/django
+     pip3 install -r requirements.txt
+     
+   SHELL
 end
