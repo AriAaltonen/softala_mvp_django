@@ -2,9 +2,9 @@ import os
 import slack
 import requests
 import json
-from tokeni import *
+import hidden
 
-client = slack.WebClient(token=tokeni)
+client = slack.WebClient(token=hidden.tokeni)
 
 response2 = requests.get("http://127.0.0.1:8000/drink/?format=json")
 json_data = json.loads(response2.text)
