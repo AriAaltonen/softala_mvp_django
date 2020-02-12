@@ -1,4 +1,0 @@
-Django==2.2.4
-djangorestframework==3.11.0
-
-#Python 3.7.4
